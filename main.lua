@@ -26,10 +26,22 @@ end
 
 function pickup()
     print("pickup")
-    cansuck = true
-    while cansuck do
-        cansuck = turtle.suck()
+    while not ivFull do
+        cansuck = true
+        while cansuck do
+            cansuck = turtle.suck()
+        end
+        sleep(5)
     end
+end
+
+function ivFull()
+  for i = 1,16 do
+    if turtle.getItemSpace(i) > 0 then
+      return false
+    end
+  end
+  return true
 end
 
 function goto_deposit()
