@@ -1,0 +1,3 @@
+if turtle.detect() then
+ turtle.dig()
+end
